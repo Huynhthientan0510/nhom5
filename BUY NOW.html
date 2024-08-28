@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        
+        .breadcrumbs {
+            width: 100%;
+            margin: 0;
+            font-size: 20px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            border-bottom: 2px solid #5cb85c;
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .breadcrumbs:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), transparent);
+            z-index: -1;
+        }
+        
+        .breadcrumbs a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        .product-images {
+            text-align: center;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        .product-images img {
+            width: 80%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+        
+        .product-details {
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .product-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .product-colors img {
+            width: 50px;
+            margin-right: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+        
+        .product-colors img.active {
+            border-color: #000;
+        }
+        
+        .product-sizes {
+            margin-top: 20px;
+        }
+        
+        .product-sizes button {
+            margin: 5px;
+            width: 60px;
+            height: 40px;
+            border: 1px solid #ddd;
+            background-color: #fff;
+            cursor: pointer;
+        }
+        
+        .product-sizes button.active {
+            border-color: #000;
+            background-color: #f9f9f9;
+        }
+        
+        .product-description,
+        .product-reviews {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .add-to-cart {
+            margin-top: 20px;
+        }
+        
+        .add-to-cart button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #5cb85c;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .add-to-cart button:hover {
+            background-color: #4cae4c;
+        }
+        
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .other-products {
+            margin-top: 40px;
+        }
+        
+        .other-products .product-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .contact-us {
+            width: 100%;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+            border-top: 1px solid #ddd;
+            border-radius: 0;
+            font-size: 18px;
+            box-sizing: border-box;
+        }
+        
+        .contact-us h4 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .contact-us p {
+            margin-bottom: 20px;
+        }
+        /* New styles for image selection effect */
+        
+        .thumbnail img {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .thumbnail img.selected {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            border: 2px solid #5cb85c;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="breadcrumbs">
+        <a href="#">Trở lại</a> / <a href="#">Trang Chủ</a> / <a href="#">Nam</a> / <a href="#">Giày</a>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 product-images">
+                <img src="IMG/HÌNH 3.jpg" alt="Shoe Side">
+                <img src="IMG/HÌNH 5.jpg" alt="Shoe Top">
+            </div>
+            <div class="col-md-6">
+                <div class="product-details">
+                    <div class="product-title">Shoes 1</div>
+                    <div class="product-price">2.900.000₫</div>
+                    <div class="product-colors">
+                        <div>Màu sắc</div>
+                        <img src="IMG/HÌNH 1.jpg" alt="Color 1" class="active">
+                        <img src="IMG/HÌNH 2.jpg" alt="Color 2">
+                    </div>
+                    <div>Cloud White / Collegiate Green / Grey One</div>
+                    <div class="product-sizes">
+                        <div>Kích cỡ</div>
+                        <button class="active">3.5 UK</button>
+                        <button>4 UK</button>
+                        <button>4.5 UK</button>
+                        <button>5 UK</button>
+                        <button>5.5 UK</button>
+                        <button>6 UK</button>
+                        <button>6.5 UK</button>
+                        <button>7 UK</button>
+                        <button>7.5 UK</button>
+                        <button>8 UK</button>
+                        <button>8.5 UK</button>
+                        <button>9 UK</button>
+                    </div>
+                    <div class="add-to-cart">
+                        <button>Thêm vào giỏ hàng</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-description">
+            <h4>Mô tả sản phẩm</h4>
+            <p>Đây là một đôi giày thể thao chất lượng cao, thiết kế hiện đại và thoải mái cho việc sử dụng hàng ngày hoặc chơi thể thao. Chất liệu bền bỉ và đường may tinh tế đảm bảo sản phẩm sử dụng lâu dài.</p>
+        </div>
+        <div class="product-reviews">
+            <h4>Đánh giá</h4>
+            <p>Chưa có đánh giá nào cho sản phẩm này.</p>
+        </div>
+        <div class="other-products">
+            <h2 class="product-title">Sản phẩm khác</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="IMG/HÌNH 4.jpg" alt="Other Product 1">
+                        <div class="caption">
+                            <h4>Product 2</h4>
+                            <p>1.800.000₫</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="thumbnail">
+                        <img src="IMG/HÌNH 6.jpg" alt="Other Product 2">
+                        <div class="caption">
+                            <h4>Product 3</h4>
+                            <p>2.200.000₫</p>
+                            <p><a href="#" class="btn btn-primary" role="button">Buy Now</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contact-us">
+        <div class="container">
+            <h4>Liên Hệ Với Chúng Tôi</h4>
+            <p>Email: support@example.com</p>
+            <p>Điện thoại: +84 123 456 789</p>
+            <p>Địa chỉ: 123 Đường ABC, Quận 1, TP. Hồ Chí Minh</p>
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.product-colors img').click(function() {
+                $('.product-colors img').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.product-sizes button').click(function() {
+                $('.product-sizes button').removeClass('active');
+                $(this).addClass('active');
+            });
+
+            $('.thumbnail img').click(function() {
+                $('.thumbnail img').removeClass('selected');
+                $(this).addClass('selected');
+            });
+        });
+    </script>
+</body>
+
+</html>
